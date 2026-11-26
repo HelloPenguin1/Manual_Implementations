@@ -2,6 +2,19 @@
 import numpy as np
 
 def naive_cos_similarity(a, b):
+    '''
+    Cosine Similarity -> measures how similar the direction of two vectors is
+     - by calculating the cosine of the angle between them
+     
+    Why divide by product of magnitude? -> normalizes the dot product such that the result represents 
+    directional similarity rather than vector size
+    
+    ASSUMPTIONS of this particular version...
+    1. Both vectors are one-dimensional
+    2. Both vectors have equal length (hence, np.dot is able to be used)
+    3. Neither vector is a zero vector (edge-case!)
+    '''
+    
     #convert to numpy arr for operations
     a,b = np.asarray(a), np.asarray(b)
     
